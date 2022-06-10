@@ -50,9 +50,10 @@ class TestCamera(App):
     def build(self):
         return CameraClick()
 
-
 TestCamera().run()
+
 # второй этап : выводим сообщение (в перспективе состав)
+
 class MyApp(App):
 
     def build(self):
