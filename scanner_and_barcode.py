@@ -54,19 +54,19 @@ from PIL import Image
 print(decode(Image.open('barcode1.png')))
 res = decode(Image.open('barcode1.png'))
 barcode_str= res[0].data.decode('utf-8') #извлекаем штрихкод
-barcode_str = int(barcode_str)
+#barcode_str = int(barcode_str)
 print(barcode_str)
-print(type(barcode_str))
+#print(type(barcode_str))
 
 
 # print(res.data)
 
-# третий этап : выводим сообщение (в перспективе состав)
+# третий этап : выводим сообщение (в перспективе состав, сейчас - штрихкод)
 
 class MyApp(App):
 
     def build(self):
-        return Label(text='Hello world')
+        return Label(text=barcode_str)
 #camera.take_picture('buttom.png', print)#доступ к камере
 
 if __name__ == '__main__':

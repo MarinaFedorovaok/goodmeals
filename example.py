@@ -1,4 +1,4 @@
-
+import cv2
 
 def main():
     fp = 'macbookPro.jpg'
