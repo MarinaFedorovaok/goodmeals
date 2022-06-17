@@ -52,6 +52,10 @@ TestCamera().run()
 from pyzbar.pyzbar import decode
 from PIL import Image
 print(decode(Image.open('barcode1.png')))
+res = decode(Image.open('barcode1.png'))
+print(res[0].data.decode('utf-8'))
+print(type((res[0].data.decode('utf-8'))))
+# print(res.data)
 
 # третий этап : выводим сообщение (в перспективе состав)
 
