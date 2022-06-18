@@ -1,7 +1,10 @@
+from pyzbar.pyzbar import decode
+from PIL import Image
 import cv2
+#print(cv2.__version__)
 
 def main():
-    fp = 'macbookPro.jpg'
+    fp = 'barcode.png'
     # image = Image.open(fp)
     # image.show()
     image = cv2.imread(fp)
@@ -41,3 +44,4 @@ def main():
     # cv2.imwrite('macbook_qr_rect.jpg', image)
     cv2.waitKey(0)  # 按任意键退出 
 
+main()

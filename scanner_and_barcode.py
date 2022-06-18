@@ -54,13 +54,18 @@ from PIL import Image
 print(decode(Image.open('barcode1.png')))
 res = decode(Image.open('barcode1.png'))
 barcode_str= res[0].data.decode('utf-8') #извлекаем штрихкод
-#barcode_str = int(barcode_str)
+barcode_str= str(barcode_str)
 print(barcode_str)
+print(type(barcode_str))
 #print(type(barcode_str))
-
-
-# print(res.data)
-
+import requests #посылаем запрос на сервер
+headers = {
+    'accept': 'application/json',
+}
+response = requests.get('http://hotel-murino.ru:49363/api/product/'+ barcode_str, headers=headers)
+print(response.text)
+response_parsed = response.json()
+print(response_parsed)
 # третий этап : выводим сообщение (в перспективе состав, сейчас - штрихкод)
 
 class MyApp(App):
