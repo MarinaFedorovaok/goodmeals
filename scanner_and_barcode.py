@@ -65,13 +65,16 @@ headers = {
 response = requests.get('http://hotel-murino.ru:49363/api/product/'+ barcode_str, headers=headers)
 print(response.text)
 response_parsed = response.json()
-print(response_parsed)
+print(type(response_parsed))
+name = response_parsed.get('name') 
+components = response_parsed.get('components')
+
 # третий этап : выводим сообщение (в перспективе состав, сейчас - штрихкод)
 
 class MyApp(App):
 
     def build(self):
-        return Label(text=barcode_str)
+        return Label(text=name)
 #camera.take_picture('buttom.png', print)#доступ к камере
 
 if __name__ == '__main__':
